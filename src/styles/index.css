@@ -1,3 +1,16 @@
-/* 
-    General Styles
-*/
+#app{
+    background: url(https://i.pinimg.com/originals/bd/a5/be/bda5be61177acdb5fd46c3219f8b81a0.jpg);
+    overflow-y: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.navbar{
+    background-color: transparent !important;
+}
+.favbutton{
+    background-color: transparent !important;
+}
+
+

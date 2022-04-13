@@ -1,0 +1,24 @@
+.footer {
+    height: 12rem;
+    display: inline;
+    align-items: center;
+  }
+
+  a {
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  .slogan {
+   
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  .fa-jedi-order  {
+    margin: 0 0.3rem 0 0.3rem;
+    text-align: center;
+  }
+ 

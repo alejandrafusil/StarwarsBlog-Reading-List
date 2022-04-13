@@ -1,42 +1,60 @@
-const getState = ({ getStore, getActions, setStore }) => {
+import { getCharacter, getCharactersdetail, getPlanet, getPlanetsdetail} from "../../api/api";
+const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			characters: [],
+			charactersdetails: undefined,
+			planets: [],
+			planetsdetails: undefined,
+			favorites: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			getCharacters: () => {
+				getCharacter()
+					.then(value => {
+						setStore({ characters: value });
+					})
+					.catch(error => {
+						setStore({ characters: undefined });
+					});
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			getCharactersdetails: id => {
+				getCharactersdetail(id)
+					.then(value => {
+						setStore({ charactersdetails: value });
+					})
+					.catch(error => {
+						setStore({ charactersdetails: {} });
+					});
 			},
-			changeColor: (index, color) => {
-				//get the store
+			getPlanets: () => {
+				getPlanet()
+					.then(value => {
+						setStore({ planets: value });
+					})
+					.catch(error => {
+						setStore({ planets: undefined });
+					});
+			},
+			getPlanetsdetails: id => {
+				getPlanetsdetail(id)
+					.then(value => {
+						setStore({ planetsdetails: value });
+					})
+					.catch(error => {
+						setStore({ planetsdetails: {} });
+					});
+			},
+			
+			addfavorites: dato => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				setStore({ favorites: [...store.favorites, dato] });
+				console.log(store.favorites);
+			},
+			deletefavorites: index => {
+				const store = getStore();
+				store.favorites.splice(index, 1);
+				setStore({ favorites: [...store.favorites] });
 			}
 		}
 	};
