@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Badge, Dropdown } from "react-bootstrap";
-//import starwarslogo from "../../img/starwarslogo.png";
+import starwarslogo from "../../img/starwars-logo.jpeg";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {

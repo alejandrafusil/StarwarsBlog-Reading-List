@@ -2,8 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/characters.css";
-// import Charactersbg from "../../img/Charactersbg.jpg";
-// import Charactersimg from "../../img/Charactersimg.jpg";
+import Charactersbg from "../../img/Charactersbg.jpg";
+import Charactersimg from "../../img/Charactersimg.jpg";
 
 
 export const Characters = () => {
