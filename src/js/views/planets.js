@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/planets.css"
-// import Planetsbg from "../../img/Planetsbg.jpg";
-// import Planetimg from "../../img/Planetimg.jpg";
+import Planetsbg from "../../img/planets.jpeg";
+import Planetimg from "../../img/planet.jpeg";
 
 
 
